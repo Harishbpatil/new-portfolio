@@ -44,16 +44,22 @@ const ProjectCard = ({ title, videoId, techStack, githubLink }) => {
 const Projects = () => {
   const projects = [
     {
-      title: "Expense Tracker",
-      videoId: "80iFvS8dZtM",
-      techStack: ["HTML", "CSS", "JavaScript"],
-      githubLink: "https://github.com/Harishbpatil/3hoursjsproject",
+      title: "Full Stack Expense Tracker",
+      videoId: "MSkz62DvRwI",
+      techStack: ["Express", "Nodejs", "JavaScript","AWS","SQL"],
+      githubLink: "https://github.com/Harishbpatil/full-stack-expense-tracker",
+    },
+    {
+      title: "Real Time Group Chat App",
+      videoId: "SZlhBLNi490",
+      techStack: ["Express", "Nodejs", "JavaScript","Socket.io","AWS","SQL"],
+      githubLink: "https://github.com/Harishbpatil/group-chat-app-real-time",
     },
     {
       title: "Portfolio",
       videoId: "UyNiSj-Tzp8",
-      techStack: ["Node", "Express", "React", "MongoDB"],
-      githubLink: "https://github.com",
+      techStack: ["Node", "Express", "React" ],
+      githubLink: "tps://github.com/Harishbpatil/portfolio",
     },
     {
       title: "Youtube Clone",

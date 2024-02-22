@@ -93,6 +93,7 @@ button:focus {
     margin: 0;
     padding-right: 4px;
     margin-top: 50px;
+    width: 100%;
   }
   .contact .card2 {
     margin: 0;

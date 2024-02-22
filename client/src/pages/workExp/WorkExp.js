@@ -23,10 +23,11 @@ function WorkExp() {
               icon={<BsPersonWorkspace />}
             >
               <h3 className="vertical-timeline-element-title">
-                Full stack devoloper Trainee
+                Full Stack Web Developer Trainee
               </h3>
               <h4 className="vertical-timeline-element-subtitle">Sharpener</h4>
-              <p>HTML,CSS,JavaScript,React</p>
+              <p>Nodejs,Expressjs,React,Javascript,,HTML,CSS</p>
+              <p>SQL,Postgresql,MongoDB,AWS,Socket.io</p>
             </VerticalTimelineElement>
           </VerticalTimeline>
         </div>
