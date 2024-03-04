@@ -1,3 +1,4 @@
+/* Project CSS */
 .project {
   margin-right: 100px;
   margin-left: 100px;
@@ -13,19 +14,21 @@
 
 .project h2 {
   font-weight: bold;
-  color: #138781;
+  color: #598b89;
 }
 
 #ads {
-  margin: 30px 0px 30px 0px;
-  display: flex; /* Use flex container for horizontal alignment */
-  flex-wrap: wrap; /* Allow wrapping to the next line on small screens */
+  margin: 30px auto; /* Center the container */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust for equal spacing between projects */
 }
 
 #ads .col-md-4 {
-  flex: 0 0 calc(33.33% - 20px); /* Adjust the width of each project card */
-  margin: 10px; /* Add margin for spacing between cards */
+  margin: 10px; /* Adjust margin between cards */
   padding-top: 15px;
+  flex: 0 0 calc(50% - 20px); /* Adjust width of each card to take 50% */
+  max-width: calc(50% - 20px); /* Adjust max width to take 50% */
 }
 
 #ads .card-notify-badge {
@@ -34,10 +37,9 @@
   top: -28px;
   background: #f29f67;
   text-align: center;
-  border-radius: 30px 30px 30px 30px;
+  border-radius: 30px;
   color: black;
   padding: 5px 10px;
-
   font-size: 14px;
 }
 
@@ -49,15 +51,16 @@
 .card-detail-badge {
   background-color: #f5d311;
   text-align: center;
-  border-radius: 30px 30px 30px 30px;
+  border-radius: 30px;
   color: black;
   padding: 5px 10px;
   font-size: 14px;
-  height: fit-content;
 }
+
 .card-image-overly {
   font-size: 20px;
 }
+
 .card-image-overly span {
   display: inline-block;
   margin-left: 5px;
@@ -82,7 +85,7 @@
   font-size: 16px;
   line-height: 35px;
   text-decoration: none;
-  margin: 20px auto 20px auto;
+  margin: 20px auto;
   overflow: hidden;
   position: relative;
 }
@@ -90,24 +93,22 @@
 .ad-btn:hover {
   background-color: white;
   color: #138781;
-  background: transparent;
   border: 2px solid #138781;
-  transition: all 0.5s ease;
-  box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
 }
 
-/* =============================== */
+/* Responsive CSS */
 @media (max-width: 600px) {
   .project {
-    margin: 0;
-    padding: 0;
-    margin-top: 50px;
-    width: 100%;
+    margin: 0 auto; /* Center the container */
+    width: 90%; /* Adjust container width */
   }
+
   .project hr {
-    width: 280px;
+    width: 100%; /* Adjust to full width */
   }
+
   #ads .col-md-4 {
-    flex: 0 0 calc(100% - 20px); /* Adjust width for small screens */
+    flex: 0 0 100%; /* Take full width on smaller screens */
+    max-width: 100%; /* Take full width on smaller screens */
   }
 }

@@ -1,16 +1,21 @@
 import React from "react";
 import YouTube from "react-youtube";
 import "./Projects.css";
-import Fade from "react-reveal/Fade";
+import { motion } from "framer-motion";
 
 const ProjectCard = ({ title, videoId, techStack, githubLink }) => {
   const opts = {
-    width: "100%", // You can adjust the width as needed
-    height: "200", // You can adjust the height as needed
+    width: "100%", 
+    height: "200", 
   };
 
   return (
-    <div className="col-md-4">
+    <motion.div
+      className="col-md-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="card rounded">
         <div className="card-image">
           <span className="card-notify-badge">Full Stack</span>
@@ -37,7 +42,7 @@ const ProjectCard = ({ title, videoId, techStack, githubLink }) => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -46,19 +51,21 @@ const Projects = () => {
     {
       title: "Full Stack Expense Tracker",
       videoId: "MSkz62DvRwI",
-      techStack: ["Express", "Nodejs", "JavaScript","AWS","SQL"],
-      githubLink: "https://github.com/Harishbpatil/full-stack-expense-tracker",
+      techStack: ["Express", "Nodejs", "JavaScript", "AWS", "SQL"],
+      githubLink:
+        "https://github.com/Harishbpatil/full-stack-expense-tracker",
     },
     {
       title: "Real Time Group Chat App",
       videoId: "SZlhBLNi490",
-      techStack: ["Express", "Nodejs", "JavaScript","Socket.io","AWS","SQL"],
-      githubLink: "https://github.com/Harishbpatil/group-chat-app-real-time",
+      techStack: ["Express", "Nodejs", "JavaScript", "Socket.io", "AWS", "SQL"],
+      githubLink:
+        "https://github.com/Harishbpatil/group-chat-app-real-time",
     },
     {
       title: "Portfolio",
       videoId: "UyNiSj-Tzp8",
-      techStack: ["Node", "Express", "React" ],
+      techStack: ["Node", "Express", "React"],
       githubLink: "tps://github.com/Harishbpatil/portfolio",
     },
     {
@@ -78,11 +85,9 @@ const Projects = () => {
       <p className="pb-3 text-center">Here are My Recent Projects</p>
       {/* card design */}
       <div className="row" id="ads">
-        <Fade>
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
-        </Fade>
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
       </div>
     </div>
   );
