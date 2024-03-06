@@ -1,18 +1,9 @@
-.about-container {
-  perspective: 1000px; 
-}
-
 .about {
   margin: 60px 0px;
   padding: 20px;
   margin-left: 100px;
   padding-left: 150px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: transform 0.5s; 
-}
-
-.about:hover {
-  transform: rotateY(10deg); 
 }
 
 .about-img img {

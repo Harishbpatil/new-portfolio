@@ -10,7 +10,7 @@ import ScrollToTop from "react-scroll-to-top";
 import { useTheme } from "./context/ThemeContext";
 import Tada from "react-reveal/Tada";
 import MobileNav from "./components/MobileNav/MobileNav";
-
+import { motion } from "framer-motion"
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -62,5 +62,9 @@ function App() {
     </>
   );
 }
+
+export const MyComponent = ({ isVisible }) => (
+  <motion.div animate={{ opacity: isVisible ? 1 : 0 }} />
+)
 
 export default App;

@@ -1,48 +1,46 @@
 import React from "react";
 import YouTube from "react-youtube";
 import "./Projects.css";
-import { motion } from "framer-motion";
+import Fade from "react-reveal/Fade";
 
 const ProjectCard = ({ title, videoId, techStack, githubLink }) => {
   const opts = {
-    width: "100%", 
-    height: "200", 
+    width: "100%",
+    height: "200",
+    autoplay: 1, 
   };
 
   return (
-    <motion.div
-      className="col-md-4"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="card rounded">
-        <div className="card-image">
-          <span className="card-notify-badge">Full Stack</span>
-          <YouTube videoId={videoId} opts={opts} />
-        </div>
-        <div className="card-image-overly m-auto mt-3">
-          {techStack.map((tech, index) => (
-            <span key={index} className="card-detail-badge">
-              {tech}
-            </span>
-          ))}
-        </div>
-        <div className="card-body text-center">
-          <div className="ad-title m-auto">
-            <h6 className="text-uppercase">{title}</h6>
+    <div className="col-md-4">
+      <Fade>
+        <div className="card rounded">
+          <div className="card-image">
+            <span className="card-notify-badge">Full Stack</span>
+            <YouTube videoId={videoId} opts={opts} />
           </div>
-          <a
-            className="ad-btn"
-            href={githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View on GitHub
-          </a>
+          <div className="card-image-overly m-auto mt-3">
+            {techStack.map((tech, index) => (
+              <span key={index} className="card-detail-badge">
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div className="card-body text-center">
+            <div className="ad-title m-auto">
+              <h6 className="text-uppercase">{title}</h6>
+            </div>
+            <a
+              className="ad-btn"
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub
+            </a>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </Fade>
+    </div>
   );
 };
 
