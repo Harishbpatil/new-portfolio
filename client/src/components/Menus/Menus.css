@@ -6,6 +6,11 @@
   vertical-align: middle;
   margin: 0 auto;
   /* margin-top: 20px; */
+  transition: transform 0.5s ease; /* Add transition for smooth animation */
+}
+
+.navbar-profile-pic img:hover {
+  transform: scale(1.1); /* Scale up the image on hover */
 }
 
 .nav-item {

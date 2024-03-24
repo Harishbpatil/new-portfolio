@@ -6,6 +6,30 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.about-content .about-heading {
+  color: gray;
+  font-family: cursive;
+  border-bottom: 2px solid gray;
+  text-align: center;
+  position: relative;
+  animation: light-on-off 2s ease-in-out infinite alternate;
+}
+
+@keyframes light-on-off {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+
+
+
 .about-img img {
   border-radius: 10px;
   width: 100%;
@@ -19,11 +43,28 @@
   align-items: center;
 }
 
-.about-content h1 {
+.about-content .about-heading {
   color: gray;
   font-family: cursive;
   border-bottom: 2px solid gray;
   text-align: center;
+  position: relative;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Basic shadow */
+  background: linear-gradient(45deg, #000, transparent); /* Texture gradient */
+  -webkit-background-clip: text; /* Apply background-clip to text */
+  -webkit-text-fill-color: transparent; /* Hide text fill */
+  perspective: 1000px; /* Perspective for 3D effect */
+}
+
+.about-content .about-heading:before {
+  content: attr(data-heading);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.05); /* Color for the 3D effect */
+  transform: translateZ(-1px) scale(2);
 }
 
 .about-content p {
@@ -31,18 +72,18 @@
   padding: 20px;
 }
 
-/*=========DARK MODE=====*/
+/* Dark Mode */
 #dark .about {
   background-color: rgba(0, 0, 0, 0.15);
   box-shadow: none;
 }
 
-#dark.about-content h1 {
+#dark.about-content .about-heading {
   color: #b0a4a4;
   border-bottom: 2px solid #b0a4a4;
 }
 
-/*=========mobile view ==========*/
+/* Mobile view */
 @media (max-width: 600px) {
   .about {
     margin: 0;
@@ -50,7 +91,7 @@
     margin-top: 20px;
     width: 100%;
   }
-  .about-content h1 {
+  .about-content .about-heading {
     margin-top: 20px;
   }
 }
