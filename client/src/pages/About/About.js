@@ -19,7 +19,7 @@ const About = () => {
                 <br />
                 <b>Age</b> : 25 years old
                 <br />
-                <b>Email</b>: harishbpatiljb@gmail.com
+                <b>Email</b>: harishpatilhbp@gmail.com
                 <br />
                 <b>Phone Number</b>:+91 - 8296834740
               </p>
