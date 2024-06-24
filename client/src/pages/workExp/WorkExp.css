@@ -1,6 +1,6 @@
 .work {
-  background-color: #1387812a;
-  background-image: url('https://gifdb.com/images/high/nature-scape-background-0qbnrjv0gc7ym66i.webp'); /* Add the URL of your GIF here */
+  background-color: rgba(19, 46, 135, 0.165);
+  /* Add the URL of your GIF here */
   background-size: cover; /* Adjust this property to 'contain' if you want the entire GIF to be visible */
   background-repeat: no-repeat;
   background-position: center;
