@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsPersonWorkspace } from "react-icons/bs";
 import {
   VerticalTimeline,
@@ -6,7 +6,18 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import "./WorkExp.css";
+import { gsap } from "gsap";
+
 function WorkExp() {
+  useEffect(() => {
+    gsap.to(".work", {
+      backgroundColor: "#1387814d",
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+    });
+  }, []);
+
   return (
     <>
       <div className="work" id="work experience">
@@ -23,11 +34,9 @@ function WorkExp() {
               icon={<BsPersonWorkspace />}
             >
               <h3 className="vertical-timeline-element-title">
-                Software Developer 
+                Full Stack Web Developer
               </h3>
-              <h4 className="vertical-timeline-element-subtitle">
-                WebAffinity Technologies Pvt Ltd.
-              </h4>
+              <h4 className="vertical-timeline-element-subtitle">Sharpener.</h4>
               <p>
                 Developed a full-stack web application using JavaScript,
                 Node.js, Express.js, Sequelize ORM, AWS RDS, Nginx, and Jenkins.

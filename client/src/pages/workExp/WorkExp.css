@@ -1,6 +1,21 @@
 .work {
   background-color: #1387812a;
+  background-image: url('https://gifdb.com/images/high/nature-scape-background-0qbnrjv0gc7ym66i.webp'); /* Add the URL of your GIF here */
+  background-size: cover; /* Adjust this property to 'contain' if you want the entire GIF to be visible */
+  background-repeat: no-repeat;
+  background-position: center;
   margin-left: 120px;
+  transition: background-color 2s ease-in-out;
+  animation: background-glow 5s infinite alternate ease-in-out;
+}
+
+@keyframes background-glow {
+  from {
+    background-color: #1387812a;
+  }
+  to {
+    background-color: #1e1e2c2a;
+  }
 }
 
 .work-exp {
@@ -10,12 +25,34 @@
 .work-exp h2 {
   font-weight: bold;
   color: #1e1e2c;
+  animation: heading-entrance 1s ease-in-out forwards;
+}
+
+@keyframes heading-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .work-exp hr {
   color: #138781;
   width: 400px;
   margin: 10px auto;
+  animation: line-appear 0.5s ease-in-out forwards;
+}
+
+@keyframes line-appear {
+  from {
+    width: 0;
+  }
+  to {
+    width: 400px;
+  }
 }
 
 .work-exp .vertical-timeline-element-title {
@@ -34,6 +71,7 @@
     width: 100%;
     margin-top: 50px;
   }
+
   .work hr {
     width: 200px;
   }

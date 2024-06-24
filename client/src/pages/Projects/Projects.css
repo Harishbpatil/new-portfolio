@@ -3,7 +3,6 @@
   margin-left: 100px;
   padding-bottom: 5px;
   width: 100%;
-  
 }
 
 .project hr {
@@ -20,6 +19,7 @@
 #ads {
   margin: 30px 0px 30px 0px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 #ads .col-md-4 {
@@ -34,46 +34,84 @@
   }
 }
 
-#ads .card-notify-badge {
-  position: absolute;
-  left: -10px;
-  top: -28px;
-  background: #f29f67;
-  text-align: center;
-  border-radius: 30px 30px 30px 30px;
-  color: black;
-  padding: 5px 10px;
-
-  font-size: 14px;
-}
-
-.project .card img {
-  height: 200px;
+.project-card {
+  position: relative;
   width: 100%;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.card-detail-badge {
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #ea5ffa 0%, #40c9ff 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #ea09ee 0%, #00dbde 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.project-card:hover::after {
+  filter: blur(30px);
+}
+
+.project-card:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+.card-video {
+  margin-bottom: 12px;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tech-badge {
   background-color: #f5d311;
   text-align: center;
-  border-radius: 30px 30px 30px 30px;
+  border-radius: 30px;
   color: black;
   padding: 5px 10px;
   font-size: 14px;
-  height: fit-content;
-}
-.card-image-overly {
-  font-size: 20px;
-}
-.card-image-overly span {
-  display: inline-block;
-  margin-left: 5px;
-}
-
-.project .card:hover {
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  transition: all 1s ease;
 }
 
 .ad-btn {
@@ -82,24 +120,57 @@
   height: 40px;
   display: block;
   text-align: center;
-  background-color: #17d6a6b2;
-  color: white;
+  border: 2px solid #ffffff;
+  background-color: #2a1de0b2;
+  color: black;
   border-radius: 80px;
   font-size: 16px;
   line-height: 35px;
   text-decoration: none;
-  margin: 20px auto 20px auto;
+  margin: 20px auto;
   overflow: hidden;
   position: relative;
+  background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
+  background-size: 300%;
+  animation: rainbow 5s linear infinite;
+  transition: background 0.5s, color 0.5s;
+}
+
+@keyframes rainbow {
+  0% {background-position: 0%;}
+  50% {background-position: 100%;}
+  100% {background-position: 0%;}
 }
 
 .ad-btn:hover {
-  background-color: white;
-  color: #138781;
-  background: transparent;
-  border: 2px solid #138781;
-  transition: all 0.5s ease;
+  background: linear-gradient(90deg, #00ffff, #00ff80, #00ff00, #80ff00, #ffff00, #ff8000, #ff0000, #ff0080, #ff00ff, #8000ff, #0000ff, #0080ff);
+  background-size: 300%;
+  animation: rainbow-reverse 5s linear infinite;
+  color: #fff;
+  border: 2px solid #080808;
   box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
+}
+
+@keyframes rainbow-reverse {
+  0% {background-position: 100%;}
+  50% {background-position: 0%;}
+  100% {background-position: 100%;}
+}
+
+.card-footer {
+  padding-top: 12px;
+  border-top: 1px solid #ccc;
+}
+
+.card-footer p {
+  margin: 0;
+  color: #fff;
+}
+
+.card-footer p.popular {
+  font-size: 14px;
+  color: #df91e7;
+  font-weight: 600;
 }
 
 /* =============================== */
@@ -114,6 +185,6 @@
     width: 280px;
   }
   #ads .col-md-4 {
-    flex: 0 0 calc(100% - 20px); 
+    flex: 0 0 calc(100% - 20px);
   }
 }

@@ -7,27 +7,24 @@ const ProjectCard = ({ title, videoId, techStack, githubLink }) => {
   const opts = {
     width: "100%",
     height: "200",
-    autoplay: 1, 
+    autoplay: 1,
   };
 
   return (
     <div className="col-md-4">
       <Fade>
-        <div className="card rounded">
-          <div className="card-image">
-            <span className="card-notify-badge">Full Stack</span>
+        <div className="card project-card">
+          <div className="card-video">
             <YouTube videoId={videoId} opts={opts} />
           </div>
-          <div className="card-image-overly m-auto mt-3">
-            {techStack.map((tech, index) => (
-              <span key={index} className="card-detail-badge">
-                {tech}
-              </span>
-            ))}
-          </div>
-          <div className="card-body text-center">
-            <div className="ad-title m-auto">
-              <h6 className="text-uppercase">{title}</h6>
+          <div className="card-content">
+            <h6 className="heading">{title}</h6>
+            <div className="tech-stack">
+              {techStack.map((tech, index) => (
+                <span key={index} className="tech-badge">
+                  {tech}
+                </span>
+              ))}
             </div>
             <a
               className="ad-btn"
@@ -38,6 +35,7 @@ const ProjectCard = ({ title, videoId, techStack, githubLink }) => {
               View on GitHub
             </a>
           </div>
+          
         </div>
       </Fade>
     </div>
@@ -50,21 +48,19 @@ const Projects = () => {
       title: "Full Stack Expense Tracker",
       videoId: "MSkz62DvRwI",
       techStack: ["Express", "Nodejs", "JavaScript", "AWS", "SQL"],
-      githubLink:
-        "https://github.com/Harishbpatil/full-stack-expense-tracker",
+      githubLink: "https://github.com/Harishbpatil/full-stack-expense-tracker",
     },
     {
       title: "Real Time Group Chat App",
       videoId: "SZlhBLNi490",
       techStack: ["Express", "Nodejs", "JavaScript", "Socket.io", "AWS", "SQL"],
-      githubLink:
-        "https://github.com/Harishbpatil/group-chat-app-real-time",
+      githubLink: "https://github.com/Harishbpatil/group-chat-app-real-time",
     },
     {
       title: "Portfolio",
       videoId: "UyNiSj-Tzp8",
       techStack: ["Node", "Express", "React"],
-      githubLink: "tps://github.com/Harishbpatil/portfolio",
+      githubLink: "https://github.com/Harishbpatil/portfolio",
     },
     {
       title: "Youtube Clone",

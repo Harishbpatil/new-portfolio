@@ -1,3 +1,4 @@
+// Contact.js
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
@@ -46,7 +47,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className=" contact" id="contact">
+      <div className="contact" id="contact">
         <Fade left>
           <h2 className="col-12 mt-3 mb-4 text-center ">CONNECT WITH ME</h2>
           <hr />
@@ -73,7 +74,7 @@ const Contact = () => {
                         Contact With
                         <a
                           className="btn btn-linkedin"
-                          href="https://www.linkedin.com/in/harishbpatil/"
+                          href="https://www.linkedin.com/"
                           rel="noreferrer"
                           target="_blank"
                         >
