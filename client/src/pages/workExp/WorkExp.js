@@ -29,7 +29,7 @@ function WorkExp() {
               className="vertical-timeline-element--work"
               contentStyle={{ background: "white", color: "#1e1e2c" }}
               contentArrowStyle={{ borderRight: "7px solid  #138781" }}
-              date="2021-2024"
+              date="2023-2024"
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<BsPersonWorkspace />}
             >

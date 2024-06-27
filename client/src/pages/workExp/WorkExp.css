@@ -1,6 +1,6 @@
 .work {
   background-color: rgba(19, 46, 135, 0.165);
-  /* Add the URL of your GIF here */
+  background-image: url('https://64.media.tumblr.com/fa143cffbc3bfb0183302cdad6aa5238/tumblr_pq229bewd61uzwgsuo1_400.gif');/* Add the URL of your GIF here */
   background-size: cover; /* Adjust this property to 'contain' if you want the entire GIF to be visible */
   background-repeat: no-repeat;
   background-position: center;
